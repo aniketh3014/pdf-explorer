@@ -1,5 +1,4 @@
 import AWS from 'aws-sdk';
-import { Key } from 'lucide-react';
 
 export const UploadFile = async (file: File) => {
     try {
@@ -26,9 +25,7 @@ export const UploadFile = async (file: File) => {
             console.log(evt.loaded, evt.total);
         }).promise();
 
-        await upload.then(() => {
-            console.log('Uploaded scuuessfully');
-        });
+        console.log('Uploaded successfully');
         return Promise.resolve({
             file_key,
             file_name: file.name,
