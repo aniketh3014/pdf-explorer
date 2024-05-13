@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss"
-
+const defaultTheme = require("tailwindcss/defaultTheme");
 const config = {
   darkMode: ["class"],
   content: [
@@ -8,6 +8,7 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
 	],
+
   prefix: "",
   theme: {
     container: {
