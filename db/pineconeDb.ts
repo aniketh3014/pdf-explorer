@@ -1,4 +1,4 @@
-import { downloadFile } from '@/lib/s3';
+import { downloadFile } from '@/lib/s3-down';
 import { Pinecone } from '@pinecone-database/pinecone';
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 
