@@ -1,7 +1,7 @@
 import { AppBar } from "@/components/AppBar";
 import { DropZone } from "@/components/DropZone";
 import { Button } from "@/components/ui/button";
-import { SignUp, SignUpButton } from "@clerk/nextjs";
+import { SignUpButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { ArrowRight } from "lucide-react";
 
