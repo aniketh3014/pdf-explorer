@@ -17,7 +17,7 @@ export const downloadFile = async (file_key: string) => {
             Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME!,
             Key: file_key,
         }
-        const file_name = `/tem/pdf-${Date.now()}.pdf`
+        const file_name = `/tmp/pdf-${Date.now()}.pdf`
         const obj = await s3.getObject(params).promise();
         fs.writeFileSync(file_name, obj.Body as Buffer);
         return file_name;
