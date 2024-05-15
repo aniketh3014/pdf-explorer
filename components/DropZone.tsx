@@ -6,8 +6,11 @@ import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useMutation } from "react-query";
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
+
 
 export const DropZone = () => {
+    const router = useRouter();
     const {mutate} = useMutation({
         mutationFn: async({file_name, file_key}:{file_name: string, file_key: string}) => {
             const res = await axios.post('/api/create-chat', {
@@ -21,7 +24,6 @@ export const DropZone = () => {
 
     const onDrop = useCallback(async (acceptedFiles:any) => {
         const file = acceptedFiles[0];
-
         if (file.size > 10 * 1024 * 1024) {
             alert('File size should be less than 10MB');
             return;
@@ -37,7 +39,8 @@ export const DropZone = () => {
             }
             mutate(done, {
                 onSuccess: () => {
-                    console.log(done);
+                    console.log("chat created");
+                    // router.push(`/chat/${chatId}`);
                 },
                 onError: (error) => {
                     console.log(error);
